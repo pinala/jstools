@@ -5,16 +5,13 @@ import babel from 'rollup-plugin-babel'
 import { name } from './package.json'
 import commonjs from 'rollup-plugin-commonjs'
 import { DEFAULT_EXTENSIONS } from '@babel/core'
+import dts from 'rollup-plugin-dts'
+import { terser } from 'rollup-plugin-terser'
 const paths = {
   input: path.join(__dirname, '/src/index.ts'),
   output: path.join(__dirname, '/lib')
 }
-const overrides = {
-  compilerOptions: { declaration: true },
-  // exclude: ["tests/**/*.ts", "tests/**/*.tsx"]
-  includes: ["src/index.ts"]
-}
-export default {
+export default [{
   input: paths.input,
   output: [{
     name,
@@ -26,13 +23,24 @@ export default {
     format: 'es'
   }],
   plugins: [
-    commonjs(),
-    nodeResolve(),
-    typescript({ tsconfigOverride: overrides }),
-    babel({
-      runtimeHelpers: true,
-      exclude: 'node_modules/**',
-      extensions: [...DEFAULT_EXTENSIONS, '.ts']
-    })
+    // commonjs(),
+    // nodeResolve(),
+    typescript(),
+    // babel({
+    //   runtimeHelpers: true,
+    //   exclude: 'node_modules/**',
+    //   extensions: [...DEFAULT_EXTENSIONS, '.ts']
+    // }),
+    terser(),
   ],
-}
+}, {
+  input: paths.input,
+  output: [{
+    name,
+    file: path.join(paths.output, 'index.d.ts'),
+    format: 'es'
+  }],
+  plugins: [
+    dts(),
+  ],
+}]

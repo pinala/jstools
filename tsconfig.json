@@ -6,7 +6,7 @@
       "esnext"
     ],
     "removeComments": false,
-    "declaration": true,
+    "declaration": false,
     "sourceMap": true,
     "strict": true,
     "noImplicitAny": false,
