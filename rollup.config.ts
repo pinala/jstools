@@ -23,14 +23,14 @@ export default [{
     format: 'es'
   }],
   plugins: [
-    // commonjs(),
-    // nodeResolve(),
+    commonjs(),
+    nodeResolve(),
     typescript(),
-    // babel({
-    //   runtimeHelpers: true,
-    //   exclude: 'node_modules/**',
-    //   extensions: [...DEFAULT_EXTENSIONS, '.ts']
-    // }),
+    babel({
+      runtimeHelpers: true,
+      exclude: 'node_modules/**',
+      extensions: [...DEFAULT_EXTENSIONS, '.ts']
+    }),
     terser(),
   ],
 }, {
