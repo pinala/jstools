@@ -2,14 +2,23 @@
   "name": "@pinala/utils",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "yarn clean && rollup -c",
     "clean": "rimraf ./lib",
     "test": "jest --coverage --verbose -u",
     "prepublishOnly": "yarn test&& yarn build"
   },
-  "typings": "lib/index.d.js",
+  "exports": {
+    ".": {
+      "import": "lib/index.esm.js",
+      "require": "lib/index.js",
+      "types": "lib/index.d.ts"
+    },
+    "./*": "./*"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn test"
@@ -30,6 +39,8 @@
     "rollup": "^2.74.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.31.2",
     "ts-jest": "^28.0.3",
     "typescript": "^4.7.2"
