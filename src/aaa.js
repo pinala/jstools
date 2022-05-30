@@ -1,1 +1,1 @@
-var ab = '' 
+const abb = ''
