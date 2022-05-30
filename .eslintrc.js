@@ -1,5 +1,3 @@
-module.exports={
-  'extends':[
-    "@pinala/eslint-config-basic"
-  ]
+module.exports = {
+  extends: '@pinala/eslint-config-basic',
 }

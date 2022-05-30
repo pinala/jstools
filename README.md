@@ -11,9 +11,7 @@
 
 ## Todo
 
-- [x] 引入代码校验工具 eslint
-- [x] jsdocs 自动化生成 api 文档
-- [x] 测试覆盖率统计 coverage
+- [x] 生成 api 文档
 - [x] 按需加载
 - [x] 支持浏览器环境，node 环境、es6 环境
 

@@ -9,7 +9,13 @@
     "build": "yarn clean && rollup -c",
     "clean": "rimraf ./lib",
     "test": "jest --coverage --verbose -u",
-    "prepublishOnly": "yarn test&& yarn build"
+    "prepublishOnly": "yarn test&& yarn build",
+    "docs:dev": "vitepress dev src",
+    "docs:build": "vitepress build src",
+    "docs:serve": "vitepress serve src",
+    "lint:fix": "eslint --fix --ext .js ./",
+    "lint": "eslint --ext .js ./",
+    "prepare": "husky install"
   },
   "exports": {
     ".": {
@@ -19,10 +25,8 @@
     },
     "./*": "./*"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn test"
-    }
+  "lint-staged": {
+    "src/*.{ts,js}": "yarn lint"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +37,7 @@
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@types/jest": "^27.5.1",
     "@types/node": "^17.0.35",
+    "@vueuse/metadata": "^8.5.0",
     "babel-jest": "^28.1.0",
     "eslint": "^8.16.0",
     "jest": "^28.1.0",
@@ -45,10 +50,12 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.31.2",
     "ts-jest": "^28.0.3",
-    "typescript": "^4.7.2"
+    "typescript": "^4.7.2",
+    "vitepress": "^0.22.4",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.2"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {}
+  }
 }

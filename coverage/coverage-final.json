@@ -1,3 +1,0 @@
-{"/Users/nawu/Ala/DEMO/组件库/pinala-utils/src/index.ts": {"path":"/Users/nawu/Ala/DEMO/组件库/pinala-utils/src/index.ts","statementMap":{"0":{"start":{"line":1,"column":0},"end":{"line":1,"column":22}}},"fnMap":{},"branchMap":{},"s":{"0":1},"f":{},"b":{}}
-,"/Users/nawu/Ala/DEMO/组件库/pinala-utils/src/util.ts": {"path":"/Users/nawu/Ala/DEMO/组件库/pinala-utils/src/util.ts","statementMap":{"0":{"start":{"line":6,"column":2},"end":{"line":6,"column":null}},"1":{"start":{"line":5,"column":0},"end":{"line":5,"column":16}}},"fnMap":{"0":{"name":"isSymbol","decl":{"start":{"line":5,"column":16},"end":{"line":5,"column":24}},"loc":{"start":{"line":5,"column":37},"end":{"line":7,"column":1}}}},"branchMap":{},"s":{"0":2,"1":1},"f":{"0":2},"b":{}}
-}
